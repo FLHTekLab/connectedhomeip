@@ -176,12 +176,15 @@ def attributeChangeCallback(
 ):
     print("attributeChangeCallback params")
     print("endpoint :", endpoint)
+    print("-"*100)
     print("clusterId :", clusterId)
     print("attributeId :", attributeId)
     print("xx_type :", xx_type)
     print("size :", size)
-    print("value :", value)
-
+    print("value (raw):", value)
+    print("value (list):", list(value))
+    print("-"*100)
+    print("")
     global app_loop
     if endpoint == 1:
         if clusterId == 6 and attributeId == 0:
@@ -204,8 +207,10 @@ def attributeChangeCallback(
             else:
                 print("[PY] no level")
         else:
+            print("="*100)
             print("[PY] [ERR] unhandled cluster {} or attribute {}".format(
                 clusterId, attributeId))
+            print("="*100)
             pass
     else:
         print("[PY] [ERR] unhandled endpoint {} ".format(endpoint))
