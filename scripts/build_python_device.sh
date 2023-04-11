@@ -95,7 +95,7 @@ source "$CHIP_ROOT/scripts/activate.sh"
 # Generates ninja files
 [[ -n "$chip_mdns" ]] && chip_mdns_arg="chip_mdns=\"$chip_mdns\"" || chip_mdns_arg=""
 
-chip_data_model_arg="chip_data_model=\"///examples/lighting-app/lighting-common\""
+chip_data_model_arg="chip_data_model=\"///examples/flh-thermostat/flh-thermostat-common\""
 
 gn --root="$CHIP_ROOT" gen "$OUTPUT_ROOT" --args="chip_detail_logging=$chip_detail_logging enable_pylib=$enable_pybindings enable_rtti=$enable_pybindings $chip_mdns_arg chip_controller=false $chip_data_model_arg"
 
